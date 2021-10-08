@@ -1,0 +1,174 @@
+mkdir sales
+cd sales
+mkdir location1
+mkdir location2
+mkdir location3
+cd location1
+cat > sales1.txt
+sales increased in the month of march
+cat > sales2.txt
+sales increased in the month of june
+cat > sales3.txt
+sales decreased in the month september 
+cd ..
+cd location2
+cat > pur1.txt
+machineries purchased
+cat > pur2.txt
+equipments purchased
+cd ..
+cd location3
+cat > stock1.txt
+machines
+computer
+keyboard
+mouse
+cpu
+motherboard
+battery
+cooling fan
+speaker
+monitor
+graphics card
+joystick
+
+cat > stock2.txt
+raw materials
+cd ..
+
+
+
+cd location2
+cat pur1.txt pur2.txt > pur3.txt
+ls
+pur1.txt  pur2.txt  pur3.txt
+cat pur3.txt
+machineries purchased
+equipments purchased
+
+
+
+cd ..
+cd ..
+cd ..
+cp -r sales/location2/pur3.txt sales/location3/stock3.txt
+cd sales
+cd location3
+ls
+stock1.txt  stock2.txt  stock3.txt
+cat stock3.txt
+machineries purchased
+equipments purchased
+
+
+
+chmod g-rwx stock3.txt
+ls 
+stock1.txt  stock2.txt  stock3.txt
+ls -l
+total 12
+-rw-r--r-- 1 exam exam 108 Oct  8 14:24 stock1.txt
+-rw-r--r-- 1 exam exam  14 Oct  8 14:25 stock2.txt
+-rw----r-- 1 exam exam  43 Oct  8 14:45 stock3.txt
+
+
+
+head -n 10 stock1.txt
+machines
+computer
+keyboard
+mouse
+cpu
+motherboard
+battery
+cooling fan
+speaker
+monitor
+
+
+
+cd ..
+ls -al
+total 20
+drwxr-xr-x  5 exam exam 4096 Oct  8 14:16 .
+drwxr-xr-x 20 exam exam 4096 Oct  8 14:51 ..
+drwxr-xr-x  2 exam exam 4096 Oct  8 14:21 location1
+drwxr-xr-x  2 exam exam 4096 Oct  8 14:39 location2
+drwxr-xr-x  2 exam exam 4096 Oct  8 14:41 location3
+
+
+
+
+
+
+
+
+echo "menu"
+echo "1.Cube"
+echo "2.Sphere"
+echo "3.Cylinders"
+echo "Enter your choice ";
+read ch
+case $ch in
+    
+    1)echo "Enter a"
+      read a
+	cube=$( expr $a \* $a \* $a )
+	echo " volume of cube $cube " ;;
+    
+    2)echo "Enter r"
+      read r
+      pi=$( expr 22 / 7 )
+      c=$( expr $r \* $r \* $r )
+      d=$( expr 4 / 3 )
+	sphere=$( expr $d \* $pi \* $c )
+	echo " volume of sphere $sphere " ;;
+    
+    3)echo "Enetr r"
+      read r
+      echo "Enter h"
+      read h
+      pi=$( expr 22 / 7 )
+      s=$( expr $r \* $r )
+	cylinder=$( expr $pi \* $s \* $h  )
+	echo "volume of cylinder $cylinder "
+	
+    esac
+
+
+menu
+1.Cube
+2.Sphere
+3.Cylinders
+Enter your choice 
+1
+Enter a
+2
+ volume of cube 8
+ 
+ 
+ bash volume.sh
+menu
+1.Cube
+2.Sphere
+3.Cylinders
+Enter your choice 
+2
+Enter r
+3
+ volume of sphere 81 
+ 
+ 
+ menu
+1.Cube
+2.Sphere
+3.Cylinders
+Enter your choice 
+3
+Enetr r
+4
+Enter h
+2
+volume of cylinder 96 
+
+
